@@ -30,4 +30,20 @@ public class ProductsService {
 		return smartphones;
 	}
 
+	public List<Laptop> getAllLaptops() {
+		return laptops;
+	}
+
+	/**
+	 * This method will return Gadget objects with the products having LED screen
+	 * and Snapdragon 8 processors and only distinct products.
+	 *
+	 * @return
+	 */
+	public List<Gadget> getLEDScreenSnap8ProcessorDistictGadgets() {
+		// TODO: implements this method using Stream API
+		// Use filtering, distinct finding, mapping to achive the goal
+		return null;
+	}
+
 }
