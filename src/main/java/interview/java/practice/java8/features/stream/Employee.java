@@ -1,5 +1,7 @@
 package interview.java.practice.java8.features.stream;
 
+import java.util.List;
+
 public class Employee {
 
 	private Integer employeeId;
@@ -8,11 +10,19 @@ public class Employee {
 
 	private String name;
 
+	private List<String> capabilities;
+
 	public Employee(Integer employeeId, String name, Float salary) {
-		super();
 		this.employeeId = employeeId;
 		this.salary = salary;
 		this.name = name;
+	}
+
+	public Employee(Integer employeeId, String name, Float salary, List<String> capabilities) {
+		this.employeeId = employeeId;
+		this.salary = salary;
+		this.name = name;
+		this.capabilities = capabilities;
 	}
 
 	public Integer getEmployeeId() {
@@ -37,6 +47,20 @@ public class Employee {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 * @return the capabilities
+	 */
+	public List<String> getCapabilities() {
+		return capabilities;
+	}
+
+	/**
+	 * @param capabilities the capabilities to set
+	 */
+	public void setCapabilities(List<String> capabilities) {
+		this.capabilities = capabilities;
 	}
 
 	@Override
@@ -74,6 +98,12 @@ public class Employee {
 		} else if (!salary.equals(other.salary))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [employeeId=" + employeeId + ", salary=" + salary + ", name=" + name + ", capabilities="
+				+ capabilities + "]";
 	}
 
 }
