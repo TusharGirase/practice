@@ -8,16 +8,13 @@ public class ComparableEmployee extends Employee implements Comparable<Employee>
 		super(id, salary);
 	}
 
-	public int compareTo(Employee o) {
-		if (o == null) {
+	@Override
+	public int compareTo(Employee emp) {
+		if (emp == null) {
 			throw new NullPointerException();
 		}
 
-		if (!(o instanceof Employee)) {
-			throw new ClassCastException();
-		}
-
-		Employee emp1 = (Employee) o;
+		Employee emp1 = emp;
 		return this.getId() - emp1.getId();
 	}
 
